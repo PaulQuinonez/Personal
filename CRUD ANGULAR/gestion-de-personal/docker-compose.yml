@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+      frontend:
+        container_name: app-client
+        restart: always
+        build: ./client
+        ports: 
+          - "4200:4200"
+        depends_on:
+          - backend        
+        logging:
+          driver: "json-file"
+        command: npm start
+      backend:
+        container_name: app-server
+        restart: always
+        build: ./server
+        ports: 
+          - "3000:3000"
+        depends_on:
+          - mongo
+      mongo:
+        container_name: database
+        image: mongo
+        ports: 
+          - "27017:27017"        
+        command: --quiet --logpath /dev/null

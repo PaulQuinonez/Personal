@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body{
+    font-family: 'Ubuntu', sans-serif !important; 
+    background-color: #f5f4ff !important;
+}
+
+nav{
+    background-color: #070228 !important;
+}
+
+.tecnico-img{
+
+    width: 150px;
+    border-radius: 50%;
+
+}
+
+.agg-img{
+    width: 150px;
+}
+
+.tecnico-img-big{
+    width: 200px;
+    border-radius: 50%;
+}
+
+.img-404{
+    width: 200px;
+}

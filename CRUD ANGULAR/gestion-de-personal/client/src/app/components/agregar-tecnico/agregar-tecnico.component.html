@@ -1,0 +1,50 @@
+<div class="container mt-3">
+
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-danger">
+                Agregar Técnico
+            </p>
+            <p class="fst-italic">Agrega un nuevo técnico a la platilla de la empresa</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Creación de nuevo técnico formulario -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form (submit)="crearTecnico()">
+                <div class="mb-2">
+                    <input required="true" [(ngModel)]="tecnico.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre y Apellido">                    
+                </div>
+                <div class="mb-2">
+                    <input required="true" [(ngModel)]="tecnico.foto" name="foto" type="text" class="form-control" placeholder="URL de Foto">
+                </div>
+                <div class="mb-2">
+                    <input required="true" [(ngModel)]="tecnico.email" name="email" type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-2">                    
+                    <input required="true" [(ngModel)]="tecnico.mobile" name="mobile" type="tel" class="form-control" placeholder="Teléfono">
+                </div>
+                <div class="mb-2">
+                    <input required="true" [(ngModel)]="tecnico.compania" name="compania" type="text" class="form-control" placeholder="Compañía">
+                </div>
+                <div class="mb-2">
+                    <input required="true" [(ngModel)]="tecnico.titulo" name="titulo" type="text" class="form-control" placeholder="Título">
+                </div>
+                <div class="mb-2">
+                    <input type="submit" class="btn btn-danger" value="Registrar">
+                    <a routerLink="/" class="btn btn-dark ms-2">Regresar</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img class="agg-img" [src]="tecnico.foto">
+        </div>
+    </div>
+</div>
+
+

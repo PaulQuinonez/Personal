@@ -1,0 +1,38 @@
+<div class="container mt-3">
+
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-danger">
+                Agregar Técnico
+            </p>
+            <p class="fst-italic">Agrega un nuevo técnico a la platilla de la empresa</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Ver técnico formulario -->
+
+<div class="container" *ngIf="isNotEmpty()">
+    <div class="row align-items-center">
+        <div class="col-sm-4">
+            <img class="tecnico-img-big" [src]="tecnico.foto">
+        </div>
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-danger">Nombre : <span class="fw-bold">{{tecnico.nombre}}</span></li>
+                <li class="list-group-item list-group-item-danger">Email : <span class="fw-bold">{{tecnico.email}}</span></li>
+                <li class="list-group-item list-group-item-danger">Teléfono : <span class="fw-bold">{{tecnico.mobile}}</span></li>
+                <li class="list-group-item list-group-item-danger">Compañía : <span class="fw-bold">{{tecnico.compania}}</span></li>
+                <li class="list-group-item list-group-item-danger">Título : <span class="fw-bold">{{tecnico.titulo}}</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <a routerLink="/" class="btn btn-dark">
+                <i class="fa fa-arrow-alt-circle-left"></i>
+                Regresar</a>
+        </div>
+    </div>
+</div>

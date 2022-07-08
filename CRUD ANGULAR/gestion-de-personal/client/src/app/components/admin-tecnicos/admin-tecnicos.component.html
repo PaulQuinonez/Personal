@@ -1,0 +1,58 @@
+<div class="container mt-3">
+
+    <div class="row">
+
+        <div  class="col">
+            
+            <p class="h3 fw-bold">
+                Técnicos de TecnoSolution
+                <a class="btn btn-dark btn-sm" routerLink="/tecnicos/agregar">
+                    <i class="fa fa-plus-circle"></i>
+                    Nuevo Técnico
+                </a>
+            </p>
+
+            <p class="fst-italic">Técnicos operativos de la empresa TecnoSolutions</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TARJETAS -->
+
+<div *ngIf="tecnicos.length > 0" class="container mt-3">
+    <div class="row">
+        <div class="col-md-6" *ngFor="let tecnicos of tecnicos">
+            <div class="card list-group-item-danger shadow-lg my-2">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <img alt="" class="tecnico-img" [src]="tecnicos.foto">
+                        </div>
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">Nombre : <span class="fw-bold">{{tecnicos.nombre}}</span></li>
+                                <li class="list-group-item">Email : <span class="fw-bold">{{tecnicos.email}}</span></li>
+                                <li class="list-group-item">Teléfono : <span class="fw-bold">{{tecnicos.mobile}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
+                            <a routerLink="/tecnicos/ver/{{tecnicos._id}}" class="btn btn-warning my-1">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a routerLink="/tecnicos/editar/{{tecnicos._id}}" class="btn btn-primary my-1">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                            <button class="btn btn-danger my-1" (click)="clickEliminarTecnico(tecnicos._id)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="h4 text-center fw-bold mt-5" *ngIf="tecnicos.length === 0">No hay técnicos para mostrar</p>

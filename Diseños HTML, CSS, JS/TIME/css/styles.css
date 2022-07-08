@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.widget {
+    width: 18%;
+}
+
+.widget p {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.fecha {
+    font-family: Poppins;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.reloj {
+    font-family: Poppins;
+    width: 100%;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+.reloj .caja-segundos {
+    display: inline-block;
+}
+
+.reloj .segundos {
+    font-size: 2rem;
+}
+
+.reloj .ampm {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    display: block;
+}
