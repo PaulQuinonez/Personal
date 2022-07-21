@@ -1,0 +1,73 @@
+<div class="container-fluid g-0">
+
+    <div class="display-area">
+
+        <main class="content mt-5">
+            <div class="container-fluid">
+                <div class="header">
+                    <h1 class="header-title">
+                        Detalle de reportes
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xl-8">
+                    <div class="card">
+                        <div class="card-header bg-dark" style="color: #fff;">
+                            <h6 class="card-subtitle text muted">Reportes.</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/reportes/nuevo" method="post" class="formulario" id="formulario">
+                                <div class="row">
+                                    <!-- GRUPO TITULO -->
+                                    <div class="col-lg-5 formulario__grupo" id="grupo__titulo">
+                                        <label class="form label">Título del reporte</label>
+                                        <div class="form-group formulario__grupo-input">
+                                            <input readonly type="text" class="form-control mt-2 formulario__input" value="{{reporte.asunto}}" id="asunto" name="asunto" required>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- GRUPO DESCRIPCION -->
+                                    <div class="col-lg-4 formulario__grupo" id="grupo__descripcion">
+                                        <label class="form label">Descripción del reporte</label>
+                                        <div class="form-group formulario__grupo-input">
+                                            <input readonly type="text" class="form-control mt-2 formulario__input" value="{{reporte.descripcion}}" id="descripcion" name="descripcion" required>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-11 mt-2">
+                                            <!-- GRUPO PROBLEMA -->
+                                            <div class="col-lg-10 formulario__grupo" id="grupo__problema">
+                                                <label class="form label">Descripción del problema</label>
+                                                <div class="form-group formulario__grupo-input">
+                                                    <textarea readonly type="number" class="form-control mt-2 formulario__input" style="height: 5%;" placeholder="{{reporte.problema}}" id="problema" name="problema" required></textarea>
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <button type="submit" class="btn btn-dark mt-3"><a href="/reportes" style="text-decoration: none; color: white;">Regresar</a></button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="card-body ">
+                        <div class="text-center mt-5">
+                            <img src="/img/tareas.png" alt="Imagen Producto" class="rounded-circle img-responsive mx-auto" style="margin-top: -60px;" width="300" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</div>

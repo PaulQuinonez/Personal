@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ITecnico } from 'src/app/models/ITecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-tecnicos',
@@ -50,11 +51,29 @@ export class AdminTecnicosComponent implements OnInit {
 
     //SI EXISTE UN TECNICO CON ESE ID, ATRAVES DE TECNICO SERVICES TRAE LA FUNCION CONECTADA AL BACKEND PARA ELIMINAR ESE TECNICO
     //UNA VEZ ELIMINADO UTILIZAMOS UN SUBSCRIBE PARA LLAMAR A LA FUNCION OBTENERTODOSLOSTECNICOS QUE NOS REFRESACARA LA PÁGINA PERO ACTUALIZADA
-    if(tecnicoId){
-      this.tecnicoServices.eliminarTecnico(tecnicoId).subscribe(({}) => {
-        this.obtenerTodosLosTecnicos();
-      })
-    }
+    Swal.fire({
+      title: '¿Estás seguro de que quieres eliminar el técnico?',
+      text: "Tu no podrás cambiar esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar técnico!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if(tecnicoId){
+          this.tecnicoServices.eliminarTecnico(tecnicoId).subscribe(({}) => {
+            this.obtenerTodosLosTecnicos();
+          })
+        }
+        Swal.fire(
+          'Eliminado!',
+          'El técnico ha sido eliminado.',
+          'success'
+        )
+      }
+    })
+    
 
   }
 

@@ -26,6 +26,12 @@ const port = process.env.PORT || 3000;
 
 //CONFIGURAMOS POR DONDE SE ESCUCHARA EL SERVIDOR
 app.listen(port, function() {
+
+    console.clear();
+
+    console.log("Bienvenido Grupo 8\n");
+
     console.log("Servidor corriendo en el puerto: " + port);
-    console.log("CONEXION CORRECTA");    
+    console.log("\nCONEXION CORRECTA");    
+    console.log("*******************************************");
 });

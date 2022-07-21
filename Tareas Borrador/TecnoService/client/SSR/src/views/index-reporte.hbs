@@ -1,0 +1,70 @@
+<div class="container-fluid g-0">
+
+    <div class="display-area">
+
+        <main class="content mt-5">
+            <div class="container-fluid">
+
+                <div class="header">
+                    <h1 class="header-title">
+                        Reportes
+                    </h1>
+                    <p class="header-subtitle">Listado de todas los reportes.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-xl-12">
+                        <div class="card">
+                            <div class="card-header bg-dark" style="color: #fff;">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5 class="card-title">Lista de reportes</h5>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h5 class="card-title">Opciones de reportes</h5>
+                                        <a href="/reportes/nuevo" class="btn btn-light btn__mod">Nuevo Reporte</a>
+                                        <a href="http://localhost:4200/inicio" class="btn btn-light btn__mod">Regresar al Inicio</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="ps-2">Asunto</th>
+                                        <th class="ps-2">Descripcion</th>
+                                        <th class="ps-2">Fecha</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                {{#each reporte}}
+                                <tbody>
+
+                                    <td class="ps-2 pt-2">{{this.asunto}}</td>
+                                    <td class="ps-2 pt-2">{{this.descripcion}}</td>
+                                    <td class="ps-2 pt-2">{{this.fecha}}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                  <i class="fas fa-cog"></i>
+                                                </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/reportes/view/{{this._id}}">Detalles de Reporte</a></li>
+                                                <li><a class="dropdown-item" href="/reportes/eliminar/{{this._id}}">Eliminar Reporte</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tbody>
+                                {{/each}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+</div>

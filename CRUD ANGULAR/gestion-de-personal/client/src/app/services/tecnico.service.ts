@@ -10,7 +10,7 @@ import { ITecnico } from '../models/ITecnico';
 //LA CLASE TECNICO SERVICE UTILIZA EL HTTPCLIENT PARA PODER CONECTARSE AL BACKEND A TRAVES DEL URL YA DEFINIDO
 export class TecnicoService {
 
-  url = 'http://127.0.0.1:3000/api/tecnicos/';
+  url = 'http://127.0.0.1:3000/api/tecnicos/'
 
   constructor(private http: HttpClient) { }
 

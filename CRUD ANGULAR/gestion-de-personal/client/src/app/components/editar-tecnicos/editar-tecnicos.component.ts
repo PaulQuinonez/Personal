@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ITecnico } from 'src/app/models/ITecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-tecnicos',
@@ -55,6 +56,14 @@ export class EditarTecnicosComponent implements OnInit {
       this.tecnicoService.editarTecnico(this.tecnicoId,this.tecnico).subscribe((data) => {
         //UNA VEZ ACTUALIZADO USAMOS EL ENRUTAMIENTO DE ANGULAR PARA PODER REDIRIGIRNOS A LA PAGINA PRINCIPAL, DONDE
         //SE VERA EL TECNICO ACTUALIZADO
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Se actualizo el técnico con éxito!',            
+          footer: '<p>Tecno Solutions Messages</p>',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigate(['tecnicos/admin']).then();
       }, (error) => {
   

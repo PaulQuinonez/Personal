@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITecnico } from 'src/app/models/ITecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-tecnico',
@@ -30,6 +31,14 @@ export class AgregarTecnicoComponent implements OnInit {
     //POST DESDE EL BACKEND, SUBSCRIBOMOS ESTA FUNCION Y LE PASAMOS LA VARIABLE DATA QUE ES DONDE SE GUARDARA EL NUEVO
     //TECNICO, Y UNA VEZ AGREGADO NOS REDIRIGIRA A LA PANTALLA DE INICIO
     this.tecnicoService.crearTecnico(this.tecnico).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Se registró el técnico con éxito!',            
+        footer: '<p>TecnoSolutions Messages</p>',
+        showConfirmButton: false,
+        timer: 1500
+      })
       this.router.navigate(['tecnicos/admin']).then();
     }, (error) => {
 
