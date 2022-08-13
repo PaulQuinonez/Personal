@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.api = void 0;
+const express_1 = require("express");
+const UserController_1 = require("../controllers/UserController");
+const api = (0, express_1.Router)();
+exports.api = api;
+api.post('/registrar', UserController_1.registrar);
+api.post('/login', UserController_1.login);
+api.get('/', UserController_1.obtenerUser);
+api.get('/ver/:id', UserController_1.obtenerUserPorId);
+api.put('/editar/:id', UserController_1.actualizaruserPorId);
+api.delete('/eliminar/:id', UserController_1.eliminarUserPorId);

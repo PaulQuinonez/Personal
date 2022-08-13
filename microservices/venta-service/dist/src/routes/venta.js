@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.api = void 0;
+const express_1 = require("express");
+const VentaController_1 = require("../controllers/VentaController");
+const api = (0, express_1.Router)();
+exports.api = api;
+api.post('/nuevaVenta', VentaController_1.registrarVenta);
+api.get('/obtenerVenta/:id', VentaController_1.obtenerVenta);
+api.get('/listado', VentaController_1.obtenerVentas);
+api.put('/editar/:id', VentaController_1.editarDetalleVenta);
+api.delete('/eliminar/:id', VentaController_1.eliminarVenta);

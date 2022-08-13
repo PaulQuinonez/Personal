@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  cliente:
+    build: ./cliente-service
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CNN=mongodb://mongo:27017/Microsv_cliente
+  producto:
+    build: ./producto-service
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CNN=mongodb://mongo:27017/Microsv_producto
+  tarea:
+    build: ./tarea-service
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CNN=mongodb://mongo:27017/Microsv_tarea
+  user:
+    build: ./user-service
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CNN=mongodb://mongo:27017/Microsv_user
+  venta:
+    build: ./venta-service
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CNN=mongodb://mongo:27017/Microsv_venta
+  mongo:
+    image: mongo
+    command: mongod --quiet --logpath /dev/null
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - cliente
+      - producto
+      - tarea
+      - user
+      - venta

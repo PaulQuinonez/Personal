@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+:root {
+    /* Bg Color */
+    --color-principal: #0000ff;
+    --color-secundario: #3F3B51;
+    --color-blanco: #fff;
+    --color-negro: #3F3B51;
+}
+
+
+/* CSS PERSONALIZADO */
+
+button:focus,
+.navbar-toggler:focus,
+.input-gruop .btn:focus,
+input.form-control:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+body {
+    background-color: var(--color-secundario);
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    height: 100vh;
+}
+
+
+/* HEADER CSS */
+
+.menu_wrapper {
+    background-color: var(--color-blanco);
+    padding: 15px 0;
+}
+
+.menu_wrapper .navbar-brand img {
+    width: 170px;
+}
