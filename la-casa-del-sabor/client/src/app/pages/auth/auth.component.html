@@ -12,13 +12,11 @@
           <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="login-card-form">
               <div class="form-item">
                   <span class="form-item-icon material-symbols-rounded">mail</span>
-                  <input type="email" placeholder="Ingrese tu email" id="emailForm" #email="ngModel" [(ngModel)]="cocinero.email"
-                  autofocus required>
+                  <input type="email" placeholder="Ingrese tu email" name="emailForm" #email="ngModel" [(ngModel)]="auth.email" autofocus required>
               </div>
               <div class="form-item">
                   <span class="form-item-icon material-symbols-rounded">lock</span>
-                  <input type="password" placeholder="Ingrese su contraseña" id="passwordForm" #password="ngModel" [(ngModel)]="cocinero.password"
-                   required>
+                  <input type="password" placeholder="Ingrese su contraseña" name="passwordForm" #password="ngModel" [(ngModel)]="auth.password" required>
               </div>
               <button type="submit">Iniciar sesion</button>
           </form>

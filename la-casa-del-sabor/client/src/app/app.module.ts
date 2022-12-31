@@ -15,7 +15,15 @@ import { RecetaEditComponent } from './pages/receta/receta-edit/receta-edit.comp
 import { RecetaViewComponent } from './pages/receta/receta-view/receta-view.component';
 import { RecetaCreateComponent } from './pages/receta/receta-create/receta-create.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecetaEspecialCreateComponent } from './pages/receta-especial/receta-especial-create/receta-especial-create.component';
+import { RecetaEspecialEditComponent } from './pages/receta-especial/receta-especial-edit/receta-especial-edit.component';
+import { RecetaEspecialIndexComponent } from './pages/receta-especial/receta-especial-index/receta-especial-index.component';
+import { RecetaEspecialViewComponent } from './pages/receta-especial/receta-especial-view/receta-especial-view.component';
+import { PreparacionIndexComponent } from './pages/preparacion/preparacion-index/preparacion-index.component';
+import { PreparacionCreateComponent } from './pages/preparacion/preparacion-create/preparacion-create.component';
+import { PreparacionEditComponent } from './pages/preparacion/preparacion-edit/preparacion-edit.component';
+import { PreparacionViewComponent } from './pages/preparacion/preparacion-view/preparacion-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import { FormsModule } from '@angular/forms';
     RecetaIndexComponent,
     RecetaEditComponent,
     RecetaViewComponent,
-    RecetaCreateComponent
+    RecetaCreateComponent,
+    RecetaEspecialCreateComponent,
+    RecetaEspecialEditComponent,
+    RecetaEspecialIndexComponent,
+    RecetaEspecialViewComponent,
+    PreparacionIndexComponent,
+    PreparacionCreateComponent,
+    PreparacionEditComponent,
+    PreparacionViewComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +54,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

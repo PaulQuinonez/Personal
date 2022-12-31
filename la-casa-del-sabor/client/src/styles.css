@@ -11,7 +11,7 @@ app-sidebar {
   position: absolute;
   left: 0rem;
   width: 250px;
-  height: calc(108.8vh - 4rem);
+  height: calc(106.4vh - 4rem);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(34, 34, 34, 1);
 }
@@ -21,4 +21,10 @@ app-sidebar {
   left: 250px;
   padding-left: 27.5px;
   width: calc(100% - 280px);
+}
+
+@media screen and (min-width: 768px){
+  app-sidebar {
+    height: calc(108vh - 4rem);
+  }
 }

@@ -12,7 +12,7 @@ export class AuthService {
   public url;
   public cocinero;
   public token: any;
-  // public identity: any;
+  public identity: any;
 
   constructor(
 
@@ -54,18 +54,18 @@ export class AuthService {
 
   }
 
-  // getIdentity():Observable<any>{
+  getIdentity():Observable<any>{
 
-  //   //OBTENEMOS LA LLAVE IDENTITY EN EL LOCAL STORAGE
-  //   const identity = JSON.parse(localStorage.getItem('identity') || "[]"); //POR SI ACASO ESTE NULO, NO SE VERA AFECTADA LA APP
-  //   if(identity){
-  //     this.identity = identity;
-  //   }else{
-  //     this.identity = null;
-  //   }
+    //OBTENEMOS LA LLAVE IDENTITY EN EL LOCAL STORAGE
+    const identity = JSON.parse(localStorage.getItem('identity') || "[]"); //POR SI ACASO ESTE NULO, NO SE VERA AFECTADA LA APP
+    if(identity){
+      this.identity = identity;
+    }else{
+      this.identity = null;
+    }
 
-  //   return this.identity;
+    return this.identity;
 
-  // }
+  }
 
 }

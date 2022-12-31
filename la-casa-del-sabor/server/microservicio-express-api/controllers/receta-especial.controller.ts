@@ -89,11 +89,11 @@ export const removeReceta = async (req : Request, res : Response) => {
 
         if (receta_eliminado) {
 
-            res.status(200).send({ idioma: receta_eliminado });
+            res.status(200).send({ receta: receta_eliminado });
 
         } else {
 
-            res.status(500).send({message: 'No se pued eliminar porque la receta en el sistema' , err})
+            res.status(500).send({message: 'No se puede eliminar la receta en el sistema' , err})
 
         }
 

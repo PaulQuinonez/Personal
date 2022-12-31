@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-public cocinero: any;
+public auth: any;
 public token : any;
 public identity : any;
 
@@ -21,32 +21,41 @@ public identity : any;
 
   ) {
 
-    this.cocinero = new Auth('', '');
-    // this.identity = this._authService.getIdentity()
+    this.auth = new Auth('', '');
+    this.identity = this._authService.getIdentity()
   }
 
   ngOnInit(): void {
+    if(this.identity.role == 'ADMIN' || this.identity.role == 'COCINERO'){
+      this._router.navigate(['home'])
+    } else {
+      this._router.navigate(['']);
+    }
   }
 
-  login(loginForm: any){
+  login(loginForm :  any){
 
     //COMPROBAMOS EL FORMULARIO SEA VÁLIDO
     if(loginForm.valid){
 
-      this._authService.login(this.cocinero).subscribe(
+      this._authService.login(this.auth).subscribe(
         response => {
+
+          console.log(response);
+
+
           //ALMACENAMOS EL TOKEN EN EL LOCAL STORAGE DEL NAVEGADOR
           this.token = response.jwt;
-          localStorage.setItem('token',this.token);
+          localStorage.setItem('token',response.token);
 
-          this._authService.login(this.cocinero, true).subscribe(
+          this._authService.login(this.auth, true).subscribe(
             response => {
-              localStorage.setItem('identity', JSON.stringify(response.cocinero));
+              localStorage.setItem('identity', JSON.stringify(response.user));
               //LO RETORNAMOS A UNA NUEVA VISTA
               this._router.navigate(['home'])
             },
             error => {
-
+              this._router.navigate([''])
             }
           )
 

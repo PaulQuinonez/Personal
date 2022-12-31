@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { hash } from 'bcrypt';
 import { Model } from 'mongoose';
 import { CreateCocineroDto } from './dto/create-cocinero.dto';
 import { UpdateCocineroDto } from './dto/update-cocinero.dto';
@@ -13,6 +14,10 @@ export class CocineroService {
   ){}
 
   async createCocinero(createCocineroDto: CreateCocineroDto) {
+
+    const {password} = createCocineroDto;
+    const plainToHash = await hash(password, 10);
+    createCocineroDto = {...createCocineroDto, password:plainToHash};
     const cocineroCreated = await this.cocineroModel.create(createCocineroDto)
     return cocineroCreated;
   }
@@ -28,8 +33,12 @@ export class CocineroService {
   }
 
   async updateCocinero(id: string, updateCocineroDto: UpdateCocineroDto) {
-    const upadateCocinero = await this.cocineroModel.findByIdAndUpdate(id, updateCocineroDto)
-    return upadateCocinero;
+
+    const {password} = updateCocineroDto;
+    const plainToHash = await hash(password, 10);
+    updateCocineroDto = {...updateCocineroDto, password:plainToHash};
+    const actualizarCocinero = await this.cocineroModel.findByIdAndUpdate(id, updateCocineroDto)
+    return actualizarCocinero;
   }
 
   async removeCocinero(id: string) {

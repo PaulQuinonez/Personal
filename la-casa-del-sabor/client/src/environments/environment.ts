@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url_mono: 'http://localhost:3000/', //TODO URL servicio monolitico
-  url_micro: 'http://localhost:3200/' //TODO URL microservicio
+  url_micro: 'http://localhost:3200/recetasEspeciales/' //TODO URL microservicio
 };
 
 /*

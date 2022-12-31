@@ -25,17 +25,17 @@ export class PreparacionController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.preparacionService.findOne(+id);
+  findByPreparacion(@Param('id') id: string) {
+    return this.preparacionService.findByPreparacion(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePreparacionDto: UpdatePreparacionDto) {
-    return this.preparacionService.update(+id, updatePreparacionDto);
+    return this.preparacionService.update(id, updatePreparacionDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.preparacionService.remove(+id);
+    return this.preparacionService.remove(id);
   }
 }
