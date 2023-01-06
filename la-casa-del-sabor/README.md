@@ -1,4 +1,4 @@
-<p align="center"><img src="img.png" text-align="center" width="700" height="400" style="border-radius: 20%"/></p>
+<p align="center"><img text-align="center" width="700" height="400" style="border-radius: 20%"/></p>
 
 ## REQUERIMIENTOS GENERALES DEL PROYECTO
 - Angular: v13.1.4
