@@ -1,6 +1,5 @@
-import { IsDate, IsEmail, IsMongoId, IsNotEmpty, IsNumber, MaxLength, MinLength  } from "class-validator";
+import { IsBoolean, IsDate, IsEmail, IsMongoId, IsNotEmpty, IsNumber, MaxLength, MinLength  } from "class-validator";
 import { Cocinero } from "src/cocinero/schema/cocinero.schema";
-import { Receta } from "src/receta/schema/receta.schema";
 export class CreatePreparacionDto {
 
     @IsNotEmpty()
@@ -26,6 +25,5 @@ export class CreatePreparacionDto {
 
     @IsNotEmpty()
     @IsMongoId()
-    idReceta : Receta
-
+    idReceta : string
 }

@@ -1,6 +1,6 @@
 import express, { Router, Express} from "express";
 import cors from 'cors';
-import {api as receta} from './routes/receta-especial.route';
+import {api as receta} from './routes/receta.route';
 import { dbConexion } from "./database/db";
 
 export class Servidor {
@@ -20,7 +20,7 @@ export class Servidor {
 
         //TODO RUTA
         this.paths = {
-            receta: '/recetasEspeciales'
+            receta: '/receta'
         }
 
         //TODO LLAMADA A METODOS
@@ -58,7 +58,7 @@ export class Servidor {
             console.clear();
             console.log('Bienvenido al Microservicio de Recetas Especiales');
             console.log("************************************************* \n");            
-            console.log(`Servidor corriendo en: http://localhost:${this.port}/recetasEspeciales`);
+            console.log(`Servidor corriendo en: http://localhost:${this.port}/receta`);
             console.log("******************************************************************************** \n");
             console.log("CONEXIÓN DEL SERVIDOR CORRECTA");
             console.log("****************************** \n");

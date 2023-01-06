@@ -16,4 +16,4 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto){
     @IsNotEmpty()
     role: string;
 
-}
+} 

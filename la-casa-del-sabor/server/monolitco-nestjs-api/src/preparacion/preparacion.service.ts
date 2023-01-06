@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { response } from 'express';
 import { Model } from 'mongoose';
+import { send } from 'process';
+import { Cocinero } from 'src/cocinero/schema/cocinero.schema';
 import { CreatePreparacionDto } from './dto/create-preparacion.dto';
 import { UpdatePreparacionDto } from './dto/update-preparacion.dto';
 import { Preparacion, PreparacionDocument } from './schemas/preparacion.schema';
