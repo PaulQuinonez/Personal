@@ -1,0 +1,37 @@
+<section class="dashboard">
+
+    <div class="dash-content">
+        <div class="overview" style="margin-left: 10px;">
+            <div class="title">
+                <i class="uil uil-desktop"></i>
+                <span class="text">Registro de activos</span>
+            </div>
+            <div class="mb-3">
+                <span>
+                    <h5 style="font-weight: 400 !important;">Registro de activos distribuidos en Ecuahealth</h5>
+                </span>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <form action="/activo/nuevo" method="post">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="form-group mb-3">
+                                    <label for="nombre" class="form-label">Nombre del activo</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Ingrese un nombre para el activo" id="activoT" name="activoT" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-secondary mt-3" style="margin-right: 10px;" href="/activo">Regresar</a>
+                                <button type="submit" class="btn btn-primary mt-3">Crear</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
