@@ -8,6 +8,7 @@ const conexionDB = async() => {
 
         //UTILIZAMOS MONGOOSE PARA PODER CONECTARNOS A LA BD A TRAVES DE LA VARIABLE DE ENTORNO
         await mongoose.connect(process.env.DB_MONGO)
+        console.clear();
         console.log("Base de datos conectada correctamente!");
         console.log("*******************************************");
 
